@@ -5,13 +5,18 @@ body {
 	background-color: #000000;
 }
 /*- - - - - - S T A R T - N A V I G A T I O N - - - - - -*/
+.glyphicon-align-justify {
+	position: absolute;
+	margin-top: 5px;
+	margin-left: 360px;
+}
 .navbar {
 	border-radius: 0;
 }
 .navbar-logo {
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
+	position: absolute;
+	margin-top: 22px;
+	margin-left: 40px;
 }
 .navbar-logo img {
 	width: auto;
