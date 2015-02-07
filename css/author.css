@@ -3,20 +3,22 @@
 /*- -*/
 body {
 	background-color: #000000;
+	font-family: 'Open Sans', sans-serif;
 }
 /*- - - - - - S T A R T - N A V I G A T I O N - - - - - -*/
+.icon-settings a {
+	font-size: 10pt;
+	text-decoration: none;
+}
 .glyphicon-align-justify {
-	position: absolute;
-	margin-top: 5px;
-	margin-left: 360px;
+	position: fixed;
+	top: 8px;
+	right: 8px;
 }
-.navbar {
+.navigation {
 	border-radius: 0;
-}
-.navbar-logo {
-	position: absolute;
-	margin-top: 22px;
-	margin-left: 40px;
+	padding-top: 20px;
+	text-align: center;
 }
 .navbar-logo img {
 	width: auto;
@@ -46,12 +48,48 @@ li a:hover {
 	/*color: #f9484e;*/
 	background-color: #000000;
 }
+.information {
+	background-color: #fff;
+	border-radius: 5px;
+
+	padding: 12px;
+}
+h1	{
+	margin: 0;
+
+	font-family: 'Open Sans', sans-serif;
+	font-size: 24pt;
+	font-weight: 700;
+}
+h3 {
+	padding: 5px;
+	color: #fff;
+	font-size: 11pt;
+
+	margin-top: -9px;
+	border-radius: 0;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
+p	{
+	color: #000000;
+	font-family: 'Open Sans', sans-serif; 
+	font-size: 10pt;
+
+	padding: 5px;
+}
 /*- - - - - - S T A R T - F O O T E R - - - - - -*/
 .container a {
-	padding: 12px;
+	font-size: 20pt;
+	top: 13px;
 	text-decoration: none;
 }
-
+.container a:hover {
+	color: #fff;
+}
+.margin-icons {
+	margin-right: 50px;
+}
 .navbar-fixed-bottom {
 	text-align: center;
 	border-radius: 0;
