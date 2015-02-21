@@ -14,3 +14,20 @@ function slide_vert() {
 }
 // get the party started
 slide_vert();
+
+/*-------------------------------------------
+| Interactive Media - Week 07 :: Homework
+-------------------------------------------*/
+function size() {
+	$('.glyphicon-heart').animate({'font-size':'230px'},200);
+}
+$('.glyphicon-heart').click(size);
+// - - -
+function move() {
+	$('.glyphicon-arrow-right').animate({'margin-left':'600px'},200);
+}
+$('.glyphicon-arrow-right').click(move);
+// - - -
+$('.glyphicon-apple').mouseover(function() {
+	$('.glyphicon-apple').css({'color':'green'},500);
+});
