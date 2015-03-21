@@ -1,33 +1,25 @@
-/*-------------------------------------------
-| Interactive Media - Week 06 :: Homework
--------------------------------------------*/
-function slide_vert() {
-	var firstSlide = $('#slides img:eq(0)');
-
-	firstSlide.delay(2000).animate({'margin-top':'-300px'},1000, onceCooked);
-
-	function onceCooked() {
-		firstSlide.appendTo('#slides');
-		firstSlide.css({'margin-top':'0px'});
-		slide_vert(); //keep the party going
-	}
-}
-// get the party started
-slide_vert();
-
-/*-------------------------------------------
-| Interactive Media - Week 07 :: Homework
--------------------------------------------*/
-function size() {
-	$('.glyphicon-heart').animate({'font-size':'230px'},200);
-}
-$('.glyphicon-heart').click(size);
-// - - -
-function move() {
-	$('.glyphicon-arrow-right').animate({'margin-left':'600px'},200);
-}
-$('.glyphicon-arrow-right').click(move);
-// - - -
-$('.glyphicon-apple').mouseover(function() {
-	$('.glyphicon-apple').css({'color':'green'},500);
+// Schedules a local notification to be triggered after 5 seconds
+window.plugins.localNotification.add({
+    fireDate        : Math.round(new Date().getTime()/1000 + 5),
+    alertBody       : "This is a local notification.",
+    action          : "View",
+    repeatInterval  : "daily",
+    soundName       : "beep.caf",
+    badge           : 0,
+    notificationId  : 123,
+    foreground      : function(notificationId){ 
+        alert("Hello World! This alert was triggered by notification " + notificationId); 
+    },
+    background  : function(notificationId){
+        alert("Hello World! This alert was triggered by notification " + notificationId);
+    }           
 });
+
+// cancel notificationId = 1234
+window.plugins.localNotification.cancel(1234, callback);
+
+// cancel all notifications
+window.plugins.localNotification.cancelAll(callback);
+
+// set badge number to 3
+window.plugins.localNotification.setBadgeNumber(3);
