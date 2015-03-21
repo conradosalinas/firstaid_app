@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "com.phonegap.example"
+        id          = "com.conrad.firstaid"
         versionCode = "10"
         version     = "1.0.0" >
 
@@ -10,20 +10,49 @@
     <name>FirstAid</name>
 
     <description>
-        An example for phonegap build docs.
+        First aid kit app project.
     </description>
 
     <author href="https://build.phonegap.com" email="support@phonegap.com">
         Hardeep Shoker
     </author>
 
-    <!-- HealthKit Plugin -->
-    <gap:plugin name="com.telerik.plugins.healthkit" version="0.1.0" />
+    <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.simplec.plugins.localnotification"
+        version="0.3.5">
 
-    <!-- Geolocation Plugin -->
-    <gap:plugin name="fi.avaus.cordova.geolocation" version="0.3.11" />
+        <name>LocalNotification</name>
+        
+        <description>
+            This plugin control local notifications in iOS.
+        </description>
+        
+        <license>Apache 2.0</license>
+            
+        <engines>
+            <engine name="cordova" version=">=2.3.0" />
+        </engines>
+        
+        <js-module src="www/LocalNotification.js" name="LocalNotification">
+            <clobbers target="window.plugins.localNotification" />
+        </js-module>
 
-    <!-- GoogleNavigate Plugin -->
-    <gap:plugin name="dk.interface.cordova.plugin.googlenavigate" version="0.1.2" />
+        <plugin name="LocalNotification" value="LocalNotification" />
+        
+        <!-- ios -->
+        <platform name="ios">
+
+            <config-file target="config.xml" parent="/*">
+                <feature name="LocalNotification">
+                    <param name="ios-package" value="LocalNotification" />
+                </feature>
+            </config-file>
+
+            <header-file src="src/ios/LocalNotification.h" />
+            <source-file src="src/ios/LocalNotification.m" />
+            
+        </platform>
+    </plugin>
 
 </widget>
